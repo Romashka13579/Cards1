@@ -51,7 +51,7 @@ body{
 .cardClicked1{
     position: absolute;
     z-index: 2;
-    animation: 3s linear 1s infinite alternate slidein1;
+    animation: 3s ease 1s infinite running slidein1;
 }
 
 @keyframes slidein1{
@@ -71,7 +71,7 @@ body{
 .cardClicked2{
     position: absolute;
     z-index: 2;
-    animation: 3s linear 1s infinite alternate slidein2;
+    animation: 3s ease 1s infinite running slidein2;
 }
 
 @keyframes slidein2{

@@ -1,7 +1,7 @@
 var Cards = document.querySelectorAll('.card');
 
 Cards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('mouseenter', () => {
             for (i = 0; i < 4; i++) {
                 loop(i, card);
             }
@@ -19,3 +19,16 @@ Cards.forEach(card => {
         card.append(cardClone);
       }, (750 * i-1));
   }
+
+  Cards.forEach(card => {
+    card.addEventListener('mouseout', () => {
+        var cardCloned1 = card.querySelectorAll('.cardClicked1');
+        var cardCloned2 = card.querySelectorAll('.cardClicked2');
+        cardCloned1.forEach(cardclone => {
+            cardclone.remove();
+        });
+        cardCloned2.forEach(cardclone => {
+            cardclone.remove();
+        });
+    });
+});

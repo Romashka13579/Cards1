@@ -27,33 +27,63 @@ body{
     background: rgb(227, 227, 239);
 }
 .card{
+    position: relative;
+    display: flex;
     width: 200px;
     height: 200px;
-    background: grey;
-    border-radius: 32px;
-    animation: 4s linear 0s infinite alternate ;
 }
-.card:first-child{
+.card-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    z-index: 5;
+}
+.card:nth-child(1) .card-image{
     background: url(../images/get\ scared) center/cover;
 }
-.card:nth-child(2){
+.card:nth-child(2) .card-image{
     background: url(../images/CollidewiththeSkycover.jpg) center/cover;
 }
-.card:nth-child(3){
+.card:nth-child(3) .card-image{
     background: url(../images/sws.webp) center/cover;
 }
 
-.cardClicked{
-    animation: 3s linear 1s infinite alternate slidein;
+.cardClicked1{
+    position: absolute;
+    z-index: 2;
+    animation: 3s linear 1s infinite alternate slidein1;
 }
 
-@keyframes slidein{
+@keyframes slidein1{
     from{
         transform: translateX(0px);
         opacity: 1;
+        scale:1;
     }
     to{
         transform: translateX(50px);
         opacity: 0;
+        scale:0.8;
+
+    }
+}
+
+.cardClicked2{
+    position: absolute;
+    z-index: 2;
+    animation: 3s linear 1s infinite alternate slidein2;
+}
+
+@keyframes slidein2{
+    from{
+        transform: translateX(0px);
+        opacity: 1;
+        scale:1;
+    }
+    to{
+        transform: translateX(-50px);
+        opacity: 0;
+        scale:0.8;
+
     }
 }

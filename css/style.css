@@ -26,7 +26,7 @@ body{
     justify-content: center;
     background: rgb(227, 227, 239);
 }
-.card{
+.block1 .card{
     position: relative;
     display: flex;
     width: 200px;
@@ -86,4 +86,31 @@ body{
         scale:0.8;
 
     }
+}
+
+.block2{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+    background: rgb(227, 227, 239);
+}
+.block2 .card-2{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.card-2:nth-child(1) .card-image{
+    background: url(../images/Jimmy-Eat-World-Bleed-American-album-cover-820.webp) center/cover;
+}
+.card-2:nth-child(2) .card-image{
+    background: url(../images/selfish\ machines.jpg) center/cover;
+}
+.card-2:nth-child(3) .card-image{
+    background: url(../images/The_Death_of_Peace_of_Mind_Bad_Omens.png) center/cover;
 }

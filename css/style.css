@@ -158,3 +158,48 @@ body{
 .card-3:nth-child(3) .card-image{
     background: url(../images/situations.webp) center/cover;
 }
+
+.clone{
+    position: absolute;
+}
+
+.clone:is(:nth-child(3),:nth-child(4)){
+    animation-delay: 1000ms;
+}
+
+.clone:is(:nth-child(5),:nth-child(6)){
+    animation-delay: 2000ms;
+}
+
+.card-3:hover .clone:nth-child(even){
+    animation: 3s ease infinite leftanim;
+}
+.card-3:hover .clone:nth-child(odd){
+    animation: 3s ease infinite rightanim;
+}
+
+@keyframes leftanim{
+    from{
+        transform: translateX(0px);
+        opacity: 1;
+        scale:1;
+    }
+    to{
+        transform: translateX(-50px);
+        opacity: 0;
+        scale:0.8;
+    }
+}
+
+@keyframes rightanim{
+    from{
+        transform: translateX(0px);
+        opacity: 1;
+        scale:1;
+    }
+    to{
+        transform: translateX(50px);
+        opacity: 0;
+        scale:0.8;
+    }
+}

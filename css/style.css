@@ -38,7 +38,7 @@ body{
     width: 100%;
     height: 100%;
     border-radius: 32px;
-    z-index: 5;
+    z-index: 2;
 }
 .card:nth-child(1) .card-image{
     background: url(../images/get\ scared) center/cover;
@@ -137,6 +137,10 @@ body{
     height: 200px;
 }
 
+.original{
+    z-index: 3;
+}
+
 .block3:has(.card-3[data-color="white"]:hover) {
     background: #bfbebb;
 }
@@ -159,23 +163,37 @@ body{
     background: url(../images/situations.webp) center/cover;
 }
 
-.clone{
-    position: absolute;
+.clone:nth-child(even){
+    animation: 3s ease infinite leftanim;
+}
+.clone:nth-child(odd){
+    animation: 3s ease infinite rightanim;
 }
 
-.clone:is(:nth-child(3),:nth-child(4)){
+.clones{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+
+.clone{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card-3:hover .clones{
+    opacity: 1;
+}
+
+.card-3 .clone:is(:nth-child(3), :nth-child(4)){
     animation-delay: 1000ms;
 }
 
-.clone:is(:nth-child(5),:nth-child(6)){
+.card-3 .clone:is(:nth-child(5),:nth-child(6)){
     animation-delay: 2000ms;
-}
-
-.card-3:hover .clone:nth-child(even){
-    animation: 3s ease infinite leftanim;
-}
-.card-3:hover .clone:nth-child(odd){
-    animation: 3s ease infinite rightanim;
 }
 
 @keyframes leftanim{
@@ -185,9 +203,9 @@ body{
         scale:1;
     }
     to{
-        transform: translateX(-50px);
+        transform: translateX(-80px);
         opacity: 0;
-        scale:0.8;
+        scale:0.7;
     }
 }
 
@@ -198,8 +216,8 @@ body{
         scale:1;
     }
     to{
-        transform: translateX(50px);
+        transform: translateX(80px);
         opacity: 0;
-        scale:0.8;
+        scale:0.7;
     }
 }
